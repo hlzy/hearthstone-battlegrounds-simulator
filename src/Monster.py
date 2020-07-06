@@ -42,7 +42,6 @@ class Monster(object):
            self.special[each] = False
        for each_special in str(Monsters_file[Monsters_file["name"] == name]["special"].tolist()[0]).replace(chr(0xa0),"").split(","):
            self.special[each_special] = True
-       #self.special = Monsters_file[Monsters_file["name"] = name]["special"].split(",")
 
     #触发亡语特效,特效的种类有几种
     #1. 增益类,给队友带来特效
@@ -50,6 +49,11 @@ class Monster(object):
     #3. 伤害类,如 食尸鬼 
     def triger_death(self,name):
         pass 
+
+    #1. 召唤类
+    def triger_battlecry(self,name):
+        if name="雄斑虎":
+            return  1,Monster()
 
     def show(self):
         print("""name:{}
